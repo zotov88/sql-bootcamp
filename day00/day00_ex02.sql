@@ -1,6 +1,7 @@
 select name, rating
 from pizzeria
-where rating >= 3.5 and rating <= 5
+where rating >= 3.5
+  and rating <= 5
 order by rating desc;
 
 select name, rating
