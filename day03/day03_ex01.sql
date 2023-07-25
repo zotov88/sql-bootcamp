@@ -1,5 +1,6 @@
-select m.id as menu_id
-from menu m
-         left join person_order po on m.id = po.menu_id
-where order_date is null
-order by 1;
+select id as menu_id
+from menu
+except
+select menu_id
+from person_order
+order by 1
