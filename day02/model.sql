@@ -1,3 +1,9 @@
+drop table if exists person cascade;
+drop table if exists pizzeria cascade;
+drop table if exists menu cascade;
+drop table if exists person_visits cascade;
+drop table if exists person_order cascade;
+
 create table person
 ( id bigint primary key ,
   name varchar not null,
