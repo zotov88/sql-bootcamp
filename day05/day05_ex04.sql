@@ -9,6 +9,7 @@ from menu;
 select *
 from menu;
 
+-- already exists
 insert into menu
 values ((select max(id) + 1 from menu),
         2,
