@@ -10,6 +10,7 @@ drop sequence if exists seq_person_discounts;
 drop table if exists person_audit cascade;
 drop function if exists fnc_trg_person_insert_audit() cascade;
 drop function if exists fnc_trg_person_update_audit() cascade;
+drop function if exists fnc_trg_person_delete_audit() cascade;
 --
 
 create table person
