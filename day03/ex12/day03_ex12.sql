@@ -4,7 +4,7 @@ select t                                                      as id,
        (select id from menu where pizza_name = 'greek pizza') as menu_id,
        '2022-02-25'
 from person p
-         join generate_series((select max(id) from person_order),
+         join generate_series((select max(id) from person_order) + 1,
                               (select max(id) from person_order) + (select max(id) from person),
                               1) as t
               on p.id = t - (select max(id) from person_order);
