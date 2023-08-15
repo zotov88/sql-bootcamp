@@ -1,5 +1,5 @@
 insert into person_discounts
-select row_number() over () as id,
+select row_number() over() as id,
        po.person_id,
        m.pizzeria_id,
        (case
@@ -10,3 +10,5 @@ select row_number() over () as id,
 from person_order po
          join menu m on po.menu_id = m.id
 group by po.person_id, m.pizzeria_id;
+
+drop table if exists person_discounts;
