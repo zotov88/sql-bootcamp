@@ -4,9 +4,12 @@ drop table if exists menu cascade;
 drop table if exists person_visits cascade;
 drop table if exists person_order cascade;
 drop table if exists person_discounts cascade;
+drop table if exists person_audit cascade;
 drop sequence if exists seq_person_discounts;
 drop function if exists fnc_fibonacci(pstop integer);
 drop function if exists func_minimum(arr numeric[]);
+drop function if exists fnc_trg_person_delete_audit();
+drop function if exists fnc_trg_person_insert_audit();
 
 create table person
 (

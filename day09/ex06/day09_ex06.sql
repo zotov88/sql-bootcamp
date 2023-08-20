@@ -13,14 +13,12 @@ as
 $body$
 begin
     return query (select distinct pz.name
-                  from person p
-                           join public.person_order po on p.id = po.person_id
-                           join public.menu m on m.id = po.menu_id
-                           join public.pizzeria pz on pz.id = m.pizzeria_id
-                           join public.person_visits pv on pz.id = pv.pizzeria_id
+                  from menu m
+                           join pizzeria pz on pz.id = m.pizzeria_id
+                           join person_visits pv on m.pizzeria_id = pv.pizzeria_id
+                           join person p on pv.person_id = p.id
                   where p.name = pperson
                     and m.price < pprice
-                    and po.order_date = pdate
                     and pv.visit_date = pdate);
 end;
 $body$ language plpgsql;

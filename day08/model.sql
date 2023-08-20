@@ -5,6 +5,7 @@ drop table if exists person_visits cascade;
 drop table if exists person_order cascade;
 drop table if exists person_discounts cascade;
 drop sequence if exists seq_person_discounts;
+drop function if exists fnc_fibonacci(n bigint);
 
 create table person
 (
